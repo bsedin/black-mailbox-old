@@ -32,6 +32,10 @@ class BlackMailbox < Sinatra::Base
   end
 
   get '/' do
+    if request.env["rack.url_scheme"]
+      flash[:warning] = 'You are browsing non encrypted BlackMailbox setup. ' \
+        'Your message can be sniffed.'
+    end
     check_installation!
     slim :app
   end
