@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sinatra-flash'
+gem 'slim'
+gem 'mail'
+gem 'mail-gpg'
+gem 'pry'
+gem 'thin'

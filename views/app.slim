@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta charset="utf-8" /
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  body
+    nav.navbar.navbar-default
+      a.navbar-brand href="/"= settings.project_name
+    .container
+      .row
+        .col-xs-12
+          .row
+            - flash.each_key do |key|
+              .alert class="alert-#{key}" role="alert"
+                = flash[key]
+          form.form-horizontal name='mailbox' action='/' method='post'
+            .form-group
+              label Message
+              textarea.form-control placeholder='Message' rows="20" name='message'
+            .form-group
+              input.btn.btn-lg.btn-primary type='submit' value='Send' name='submit'
